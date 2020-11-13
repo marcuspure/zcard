@@ -1,12 +1,27 @@
 <h1>新增看板</h1>
 
-<form action="/boards" method="post">
+<%# <form action="/boards" method="post">
 <button type="submit">送出</button>
-</form>
+</form> %>
 
+
+
+<%= form_for(@board) do |f| %>
+  <%= f.label :title, '看板標題' %>
+  <%= f.text_field :title %>
+  <%= f.submit %>    
+  <%# sumit 輸出 %>
+<% end %>
+
+
+
+
+<!-- 
 <%# emmet.includeLanguages": {
     "erb".html,
     "aaa:".html, %>
 
 <%# new -> create  慣例
-    edit -> update %>
+    edit -> update %> -->
+
+   
