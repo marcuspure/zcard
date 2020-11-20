@@ -1,14 +1,13 @@
 <% if board.errors.any? %>
-<ul>
-  <% board.error.full_messages.each do |message|%>
-  <li><%=message %></li>
-  <% end %>
+  <ul>
+    <% board.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
   </ul>
- <% end %>
+<% end %>
 
-<%= form_for(board) do |f| %>
-  <%= f.label :title, '看板標題' %>
-  <%= f.text_field :title %>
-  <%= f.submit %>    
-  <%# sumit 輸出 %>
+<%= form_for(board) do |form| %>
+  <%= form.label :title, '看板標題' %>
+  <%= form.text_field :title %>
+  <%= form.submit %>
 <% end %>

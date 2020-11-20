@@ -39,14 +39,8 @@ class BoardsController < ApplicationController
      render :new 
          # render 'boards/new'
         # 資料會重洗 會重打全部
-      end
+          end
 
-     end
-
-
-     def edit
-        # @board = Board.find(params[:id])
-        # find_board
      end
 
 
@@ -55,10 +49,15 @@ class BoardsController < ApplicationController
         # find_board
         # clean_params = params.require(:board).permit(:title)
         if @board.update(board_params)
-        redirect_to root_path, notice: '更新成功'
+            redirect_to root_path, notice: '更新成功'
         else
             render:edit
         end
+     end
+
+     def edit
+        # @board = Board.find(params[:id])
+        # find_board
      end
 
      def destroy
@@ -68,8 +67,6 @@ class BoardsController < ApplicationController
         redirect_to root_path, notice: '看板已刪除'
      end
 
-
-     
      def find_board
         @board = Board.find(params[:id])
      end
